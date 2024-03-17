@@ -1,0 +1,64 @@
+Blogging Assignment
+Don’t
+1. Do not send a response in String/HTMl/XML.
+2. Do not call DB in the controller.
+Do’s
+1. API response send in JSON(status, message, error || data).
+2. MVC structure.
+3. API should be rate limited 500ms: 2hits/sec
+
+
+1. Authentication (Session base auth) : Done
+   1. Registration: email(unique), username(unique), password, name, _id
+   2. Login: email/username, Password.
+   3. Session base auth.
+   4. Logout
+2. Create Blog: Done
+   1. Only text data.
+   2. Schema (title, textbody, creationDateTime, userId)
+   3. Limits (500 char max)
+3. Home Page: Done
+   1. All Blogs are in desc order of time.
+   2. Pagination of the API’s :10
+   3. Get the blogs of the following User only
+4. My Blogs: Done
+   1. My Blogs in desc order of time.
+   2. Pagination :10
+5. Edit Blogs: Done
+   1. Title and textBody, either one or both.
+   2. Edit can be done within 30 mins only.
+6. Delete Blog: Done
+   1. Allow the user to delete the blog.
+   2. Delete the blog after 30 days
+7. RateLimiting : Done
+
+
+Follow        up tasks
+1. Follow(write): Allow the user to follow someone. Done
+2. Follower List(read) : Pagination. DESC Done
+3. FollowingList(read) : Pagination. DESC Done
+4. unFollow(delete) Done
+5. Bin Done
+
+
+Schema
+1. User
+2. Blog
+3. Follow
+4. Session
+5. Access
+
+
+
+
+
+
+
+
+Advanced Features:
+1. Hashtags
+   1. Array of 30 chars string stored in blogs schema - 20 hashtags at max
+2. Trending (Top 10)
+   1. blogs on a particular hashtag being used most in last 3 hrs
+3. Laugh/Like on blogs - Blogs schema will have a laughReaction, likeReaction keys / {type: laugh/like, blogsId , userId}
+4. Comments - Nested Comments
